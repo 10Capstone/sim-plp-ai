@@ -1,0 +1,16 @@
+services:
+  ai-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: simplp_ai_dev
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - model_cache:/root/.cache
+
+volumes:
+  model_cache:

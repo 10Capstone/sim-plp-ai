@@ -1,4 +1,4 @@
-﻿# Install: python -m pip install -r requirements.txt
+# Install: python -m pip install -r requirements.txt
 # Keep in sync with pyproject.toml. For reproducible installs use uv sync --locked.
 fastapi>=0.162.2
 flashrank>=0.2.10
