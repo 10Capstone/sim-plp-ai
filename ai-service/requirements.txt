@@ -1,0 +1,13 @@
+﻿# Install: python -m pip install -r requirements.txt
+# Keep in sync with pyproject.toml. For reproducible installs use uv sync --locked.
+fastapi>=0.162.2
+flashrank>=0.2.10
+google-genai>=3.0.0
+httpx>=0.28.1
+loguru>=0.7.3
+pydantic-settings>=2.16.2
+pytest>=9.2.0
+pytest-asyncio>=1.4.1.post1
+qdrant-client>=1.20.0
+sentence-transformers>=6.2.0
+uvicorn>=0.54.0
