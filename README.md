@@ -6,7 +6,7 @@ Service hanya membaca koleksi Qdrant yang sudah ada.
 
 ## Menjalankan
 
-Gunakan Python 3.12+ dan [uv](https://docs.astral.sh/uv/). Dari folder `ai-service/`:
+Gunakan Python 3.12+ dan [uv](https://docs.astral.sh/uv/):
 
 ```powershell
 uv sync --locked
@@ -178,7 +178,7 @@ dan API key Gemini atau OpenAI untuk menghasilkan jawaban. Qdrant lokal yang
 kosong belum bisa digunakan: startup memerlukan koleksi yang sudah tersedia.
 Minta URL dan akses Qdrant kepada pemilik proyek melalui kanal yang aman.
 
-Dari direktori `ai-service`, jalankan di PowerShell:
+Dari direktori root proyek, jalankan di PowerShell:
 
 ```powershell
 py -3.12 -m venv .venv

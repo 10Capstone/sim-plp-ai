@@ -12,9 +12,8 @@ Dokumen ini berisi panduan komprehensif untuk menguji seluruh endpoint pada laya
 * **Koleksi Qdrant Aktif:** `plp_indoe5_cs96_ov32` (677 points, 384 dimensi, Cosine)
 
 ### Cara Menjalankan Server API:
-Pastikan berada di folder `ai-service`:
+Pastikan berada di root direktori proyek:
 ```powershell
-cd e:\VSCODE\capstone-api\ai-service
 python -m uv run uvicorn main:app --reload --port 8000
 ```
 
