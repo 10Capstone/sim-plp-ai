@@ -142,6 +142,20 @@ def test_openapi_exposes_endpoints(api):
     assert "/api/v1/retrieve" in schema["paths"]
 
 
+def test_cors_options_preflight(api):
+    client, _, _ = api
+    response = client.options(
+        "/api/v1/retrieve",
+        headers={
+            "Origin": "http://localhost:5173",
+            "Access-Control-Request-Method": "POST",
+        },
+    )
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
+    assert response.headers["access-control-allow-credentials"] == "true"
+
+
 def test_startup_failure_prevents_serving_and_closes_client(
     settings, qdrant_client, monkeypatch
 ):

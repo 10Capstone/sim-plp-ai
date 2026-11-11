@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request, Response
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from api.v1.chat import router as chat_router
@@ -42,6 +43,15 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app = FastAPI(
         title="Qdrant Chatbot API Service", version="0.1.0", lifespan=lifespan
     )
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origin_regex=r"^https?://.*$",
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
     app.include_router(retrieve_router)
     app.include_router(chat_router)
 
