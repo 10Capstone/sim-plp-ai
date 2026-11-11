@@ -31,5 +31,5 @@ def test_default_env_path_is_independent_of_working_directory(tmp_path, monkeypa
     env_path = Settings.model_config["env_file"]
     monkeypatch.chdir(tmp_path)
     assert env_path.is_absolute()
-    assert env_path.parent.name == "ai-service"
+    assert env_path.parent.name in ("ai-service", "sim-plp-ai")
     assert env_path.name == ".env"

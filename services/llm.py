@@ -51,8 +51,9 @@ class LLMClientService:
                     raise LLMUnavailableError("LLM API key is not configured")
                 self._client = AsyncOpenAI(
                     api_key=self.settings.OPENAI_API_KEY,
+                    base_url=self.settings.OPENAI_BASE_URL or None,
                     timeout=self.settings.LLM_TIMEOUT_SECONDS,
-                    max_retries=0,
+                    max_retries=1,
                 )
         return self._client
 

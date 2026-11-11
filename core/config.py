@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     LLM_MODEL: str = "gemini-2.5-flash"
     GEMINI_API_KEY: str = Field(default="", repr=False)
     OPENAI_API_KEY: str = Field(default="", repr=False)
+    OPENAI_BASE_URL: str | None = None
     LLM_API_KEY: str = Field(default="", repr=False)
     LLM_PROVIDER: Literal["auto", "gemini", "openai"] = "auto"
     OPENAI_MODEL: str = "gpt-4o-mini"
